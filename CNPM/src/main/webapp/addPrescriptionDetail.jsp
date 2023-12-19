@@ -15,7 +15,7 @@
 <div class="container mt-5">
     <h1>Prescription Form</h1>
     <form action="AddPrescriptionDetail" method="post">
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="nameMe">Name of Medicine:</label>
         <select class="select form-control-lg" name="nameMe" id="nameMe">
         <option value="NULL" disabled selected>Choose Name Medicine</option>
@@ -35,6 +35,11 @@
 
         </select>
         </div>
+         -->
+         <div class="form-group">
+                <label for="nameCus">NameSick :</label>
+                <input type="text" class="form-control" id="nameSick" name="nameSick" required>
+            </div>
             <div class="form-group">
                 <label for="nameCus">Dose :</label>
                 <input type="text" class="form-control" id="dose" name="dose" required>
