@@ -1,14 +1,7 @@
 package model.dao;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.Statement;
-
+import java.sql.*;
+import java.sql.PreparedStatement;
 
 import model.bean.User;
 
@@ -37,7 +30,6 @@ public class UserDAO {
 		}
 		return null;
 	}
-
 	public User findUser(String username) throws ClassNotFoundException, SQLException {
 		if (conn == null)
 			conn = ConnectDatabase.getMySQLConnection();

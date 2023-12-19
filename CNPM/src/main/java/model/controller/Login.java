@@ -47,7 +47,7 @@ public class Login extends HttpServlet {
 			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/login.jsp");
 			dispatcher.forward(request, response);
 		} else {
-			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/UserManual");
+			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/Custome");
 			dispatcher.forward(request, response);
 		}
 	}
@@ -85,7 +85,7 @@ public class Login extends HttpServlet {
 			else {
 				GetCookie.deleteUserCookie(response);
 			}
-			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/Home");
+			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/Custome");
 			dispatcher.forward(request, response);
 		} else {
 			if (errorString == null)
