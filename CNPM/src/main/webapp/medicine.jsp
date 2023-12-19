@@ -46,7 +46,7 @@
 					<!--   for (Todo todo: todos) {  -->
 					<%
 					    List<model.bean.Medicine> list = (List<model.bean.Medicine>) request.getAttribute("listMedicine");
-					    
+					System.out.println(list);
 					    if (list != null) {
 					        for (int i = 0; i < list.size(); i++) {
 					            model.bean.Medicine medicine = list.get(i);

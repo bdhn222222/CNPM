@@ -4,10 +4,10 @@ public class PrescriptionDetail {
 	private int idPreDetail;
 	private int idCus;
 	private int idMe;
-	private float dose;
+	private double dose;
 	private int frequency;
 	private int duration;
-	public PrescriptionDetail(int idPreDetail, int idCus, int idMe, float dose, int frequency,
+	public PrescriptionDetail(int idPreDetail, int idCus, int idMe, double dose, int frequency,
 			int duration) {
 		super();
 		this.idPreDetail = idPreDetail;
@@ -35,13 +35,13 @@ public class PrescriptionDetail {
 	public void setIdMe(int idMe) {
 		this.idMe = idMe;
 	}
-	public float getDose() {
+	public double getDose() {
 		return dose;
 	}
-	public void setDose(float dose) {
+	public void setDose(double dose) {
 		this.dose = dose;
 	}
-	public float getFrequency() {
+	public double getFrequency() {
 		return frequency;
 	}
 	public void setFrequency(int frequency) {

@@ -60,6 +60,11 @@
                                             onclick="window.location.href='/CNPM/DeleteCustome?idCus=<%= custome.getIdCus()%> '">
                                                 Delete
                                     </button>
+                                     &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button type="button" class="btn btn-outline-success btn-outline-rounded btn-sm my-0"
+                                            onclick="window.location.href='addPrescriptionDetail.jsp'">
+                                                Insert Prescription
+                                    </button>
                                 </td>
                             </tr>
                 <%
