@@ -62,7 +62,7 @@
                                     </button>
                                      &nbsp;&nbsp;&nbsp;&nbsp;
                                     <button type="button" class="btn btn-outline-success btn-outline-rounded btn-sm my-0"
-                                            onclick="window.location.href='addPrescriptionDetail.jsp'">
+                                            onclick="location.href='/CNPM/AddPrescriptionDetail'">
                                                 Insert Prescription
                                     </button>
                                 </td>

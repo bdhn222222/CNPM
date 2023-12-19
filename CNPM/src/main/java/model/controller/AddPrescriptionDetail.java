@@ -46,6 +46,7 @@ public class AddPrescriptionDetail extends HttpServlet {
 
 		try {
 			List<Medicine> list = medicineDAO.getAllMedicines();
+			System.out.println(list);
 			request.setAttribute("listMedicine", list);
 			prescriptionDetailDAO.addPrescriptionDetail(idPreDetail, idCus, idMe, dose, frequency, duration);
 
