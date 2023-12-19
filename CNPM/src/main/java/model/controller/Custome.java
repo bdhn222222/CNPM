@@ -38,7 +38,7 @@ public class Custome extends HttpServlet {
         try {
             List<model.bean.Custome> list = customeDAO.getAllCustome(); 
             request.setAttribute("listCustome", list);
-            request.getRequestDispatcher("home.jsp").forward(request, response);
+            request.getRequestDispatcher("custome.jsp").forward(request, response);
         } catch (ClassNotFoundException e ){
             e.printStackTrace();
         }
