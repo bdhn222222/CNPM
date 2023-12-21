@@ -14,32 +14,43 @@
 <body>
 <div class="container mt-5">
     <h1>Prescription Form</h1>
-    <form action="AddPrescriptionDetail" method="post">
+    <form action="/addPrescriptionDetail.jsp" method="post" onsubmit="return validateForm()">
+    
     <!-- <div class="form-group">
         <label for="nameMe">Name of Medicine:</label>
         <select class="select form-control-lg" name="nameMe" id="nameMe">
         <option value="NULL" disabled selected>Choose Name Medicine</option>
-			<%
-					    List<model.bean.Medicine> list = (List<model.bean.Medicine>) request.getAttribute("listMedicine");
-					    System.out.println(list);
-					    if (list != null) {
-					        for (int i = 0; i < list.size(); i++) {
-					            model.bean.Medicine medicine = list.get(i);
-					%>
-			            <option value="<%= medicine.getIdMe() %>"> <%= medicine.getNameMe() %></option>
-			<%
-			        }
-			    }
-			%>
-
+			
 
         </select>
         </div>
          -->
          <div class="form-group">
+                <label for="nameCus">Medicine's ID</label>
+                <input type="text" class="form-control" id="nameSick" name="nameSick" required>
+            </div>
+         <div class="form-group">
                 <label for="nameCus">NameSick :</label>
                 <input type="text" class="form-control" id="nameSick" name="nameSick" required>
             </div>
+         <div class="checkbox-group form-group">
+						<label>Frequency:</label>
+						<div class="form-check">
+							<input type="checkbox" class="form-check-input" id="sang"
+								name="tanSuat[]" value="Sáng"> <label
+								class="form-check-label" for="sang">BreakFast</label>
+						</div>
+						<div class="form-check">
+							<input type="checkbox" class="form-check-input" id="trua"
+								name="tanSuat[]" value="Trưa"> <label
+								class="form-check-label" for="trua">Lunch</label>
+						</div>
+						<div class="form-check">
+							<input type="checkbox" class="form-check-input" id="toi"
+								name="tanSuat[]" value="Tối"> <label
+								class="form-check-label" for="toi">Night</label>
+						</div>
+					</div>
             <div class="form-group">
                 <label for="nameCus">Dose :</label>
                 <input type="text" class="form-control" id="dose" name="dose" required>
@@ -59,5 +70,41 @@
      
     </form>
     </div>
+    
+    
+    
+    
+   
+   
+   
+   
+<script>
+    function validateForm() {
+        var lieuLuong = document.getElementById('lieuLuong').value;
+        var soNgay = document.getElementById('soNgay').value;
+
+        var checkboxes = document.getElementsByName('tanSuat[]');
+        var selectedTanSuat = [];
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                selectedTanSuat.push(checkboxes[i].value);
+            }
+        }
+
+        <%--var lieuLuongMin = <%= ListDrug.getLieuLuongMin() %>;
+        var lieuLuongMax = <%= ListDrug.getLieuLuongMax() %>;--%>
+        var lieuLuongMin = 10;
+        var lieuLuongMax = 30;
+
+        if (selectedTanSuat.length * soNgay * lieuLuongMin <= lieuLuong
+            && selectedTanSuat.length * soNgay * lieuLuongMax >= lieuLuong) {
+            alert("Kê thuốc hợp lệ. Đơn thuốc đã được cập nhật.");
+        } else {
+            alert("Kê thuốc không hợp lệ.");
+        }
+
+        return false;
+    }
+</script>
 </body>
 </html>
